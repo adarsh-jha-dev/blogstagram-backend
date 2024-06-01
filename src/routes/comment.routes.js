@@ -10,6 +10,12 @@ import {
 
 const router = Router()
 
+router.route("/").get((req, res) => {
+  res.send(
+    "Welcome to the social media API, here are the available routes: /create/:id, /delete/:id, /like/:id, /fetchall/:id, /edit/:id"
+  )
+})
+
 router.route("/create/:id").post(fetchUser, makeComment)
 router.route("/delete/:id").delete(fetchUser, deleteComment)
 router.route("/like/:id").put(fetchUser, likeComment)

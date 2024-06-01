@@ -19,6 +19,12 @@ import { getPostComments } from "../controllers/comment.controller.js"
 
 const router = Router()
 
+router.route("/").get((req, res) => {
+  res.send(
+    "Welcome to the social media API, here are the available routes: /createnewpost, /fetchallposts, /deletepost/:id, /likepost/:id, /dislike/:id, /isliked/:id, /fetchuserposts/:id, /fetchlikedposts/:id, /edit/:id, /post/:id/comments, /getpost/:id"
+  )
+})
+
 router.route("/createnewpost").post(
   fetchUser,
   upload.fields([
