@@ -1,16 +1,18 @@
 import { Router } from "express"
 import { upload } from "../middlewares/multer.middleware.js"
-import registerUser from "../controllers/user.controller.js"
-import loginUser from "../controllers/login.controller.js"
-import deleteUser from "../controllers/deleteUser.controller.js"
-import { getUserByUsername } from "../controllers/getUserByUsername.controller.js"
+import {
+  UnfollowUser,
+  checkIfUserFollows,
+  deleteUser,
+  followUser,
+  getFollowers,
+  getFollowing,
+  getUserById,
+  getUserByUsername,
+  loginUser,
+  registerUser,
+} from "../controllers/user.controller.js"
 import fetchUser from "../middlewares/fetchUser.middleware.js"
-import { getUserById } from "../controllers/getUserByUserId.controller.js"
-import { followUser } from "../controllers/followUser.controller.js"
-import { getFollowers } from "../controllers/getFollowers.controller.js"
-import { getFollowing } from "../controllers/getFollowing.controller.js"
-import { UnfollowUser } from "../controllers/unfollowUser.controller.js"
-import { checkIfUserFollows } from "../controllers/isFollowing.controller.js"
 
 const router = Router()
 
